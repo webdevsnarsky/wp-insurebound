@@ -56,6 +56,11 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
+
+if ($_SERVER['HTTP_HOST'] !== 'insurebound.local') {
+	define( 'WP_DEBUG', true ); // false - отключить показ ошибок
+	define( 'WP_DEBUG_LOG', true ); 
+}
 define( 'AUTH_KEY',         'впишите сюда уникальную фразу' );
 define( 'SECURE_AUTH_KEY',  'впишите сюда уникальную фразу' );
 define( 'LOGGED_IN_KEY',    'впишите сюда уникальную фразу' );
@@ -86,7 +91,7 @@ $table_prefix = 'wp_';
  *
  * @link https://ru.wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+// define( 'WP_DEBUG', true );
 
 /* Это всё, дальше не редактируем. Успехов! */
 
