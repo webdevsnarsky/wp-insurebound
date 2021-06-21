@@ -109,24 +109,13 @@ get_header();
   <section class="brands">
     <div class="container">
       <div class="brands__wrap row ">
-        <div class="brands__item">
-          <img src="<?php echo get_template_directory_uri(); ?>./assets/images/brands/brand-1.svg" alt="brand-1" class="brands__image">
-        </div>
-        <div class="brands__item">
-          <img src="<?php echo get_template_directory_uri(); ?>./assets/images/brands/brand-2.svg" alt="brand-2" class="brands__image">
-        </div>
-        <div class="brands__item">
-          <img src="<?php echo get_template_directory_uri(); ?>./assets/images/brands/brand-3.svg" alt="brand-3" class="brands__image">
-        </div>
-        <div class="brands__item">
-          <img src="<?php echo get_template_directory_uri(); ?>./assets/images/brands/brand-4.svg" alt="brand-4" class="brands__image">
-        </div>
-        <div class="brands__item">
-          <img src="<?php echo get_template_directory_uri(); ?>./assets/images/brands/brand-5.svg" alt="brand-5" class="brands__image">
-        </div>
-        <div class="brands__item">
-          <img src="<?php echo get_template_directory_uri(); ?>./assets/images/brands/brand-6.svg" alt="brand-6" class="brands__image">
-        </div>
+        <?php if (have_rows('brands')) : ?>
+          <?php while (have_rows('brands')) : the_row(); ?>
+            <div class="brands__item">
+              <img src="<?php the_sub_field('brend_logo'); ?>" alt="brand" class="brands__image">
+            </div>
+          <?php endwhile; ?>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -194,8 +183,8 @@ get_header();
       <div class="container container_padding">
         <div class="appointment__inner" style="background-image: url('<?php the_field('appointment_bgc'); ?>')">
           <div class="appointment__text">
-            <h2 class="appointment__title"><?php the_field('appointment_title') ?></h2>
-            <p class="appointment__descr"><?php the_field('appointment_descr') ?></p>
+            <h2 class="appointment__title"><?php the_field('appointment_title'); ?></h2>
+            <p class="appointment__descr"><?php the_field('appointment_descr'); ?></p>
           </div>
         </div>
         <div class="map">
@@ -204,7 +193,7 @@ get_header();
         <div class="appointment__wrapper">
           <div class="appointment__form-wrap">
             <div class="appointment__images">
-              <img src="<?php echo get_template_directory_uri(); ?>./assets/images/111.jpg" alt="#" class="appointment__image">
+              <img src="<?php the_field('image_form'); ?>" alt="#" class="appointment__image">
             </div>
             <?php echo do_shortcode('[contact-form-7 id="121" title="Contact form 1"]'); ?>
           </div>
