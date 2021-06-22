@@ -21,21 +21,16 @@
         <div class="header__wrapper">
           <div class="header__wrap">
             <div class="header__logo logo">
-
-
-              <!-- <a href="index.html" class="logo__link"> -->
               <?php
               $custom_logo_id = get_theme_mod('custom_logo');
               $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
 
               if (has_custom_logo()) {
-                echo '<img src="' . esc_url($logo[0]) . '" alt="' . the_field('logo_name') . '" class="logo__image">';
+                echo '<a href="index.php"><img src="' . esc_url($logo[0]) . '" alt="' . the_field('logo', 'option') . '" class="logo__image"></a>';
               } else {
-                echo '<h3 class="logo__text">' . the_field('logo_name') . '</h3>';
+                echo '<a href="index.php"><h3 class="logo__text">' . get_field('logo', 'option') . '</h3></a>';
               }
               ?>
-              <!-- <h3 class="logo__text">BrandName</h3> -->
-              <!-- </a> -->
             </div>
             <div class="header__icons icons">
               <a href="#" class="icons__link">

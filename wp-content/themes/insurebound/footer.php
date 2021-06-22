@@ -25,7 +25,7 @@
 
           <?php
           if (is_active_sidebar('custom-footer-widget')) : ?>
-              <?php dynamic_sidebar('custom-footer-widget'); ?>
+            <?php dynamic_sidebar('custom-footer-widget'); ?>
           <?php endif; ?>
         </div>
       </div>
@@ -42,12 +42,6 @@
             </li>
           <?php endwhile; ?>
         <?php endif; ?>
-
-
-        <!-- <li class="footer__social"><a href="<?php the_field('social_link'); ?>" class="footer__link" style="background-image: url('<?php the_field('social_icon', 'options'); ?>')"></a></li>
-        <li class="footer__social"><a href="<?php the_field('social_link'); ?>" class="footer__link" style="background-image: url('<?php the_field('social_icon', 'options'); ?>')"></a></li>
-        <li class="footer__social"><a href="<?php the_field('social_link'); ?>" class="footer__link" style="background-image: url('<?php the_field('social_icon', 'options'); ?>')"></a></li>
-        <li class="footer__social"><a href="#" class="footer__link" style="background-image: url('<?php the_field('social_icon'); ?>')"></a></li> -->
       </ul>
     </div>
   </div>
@@ -55,8 +49,6 @@
 <?php
 wp_footer();
 ?>
-<!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-<!-- <script src="./assets/js/script.js"></script> -->
 </body>
 
 </html>
