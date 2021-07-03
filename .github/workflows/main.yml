@@ -16,7 +16,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: assape1410.epizy.com
+        server: ftpupload.net
         username: epiz_29045278
         port: 21
         password: ${{ secrets.PROD_FTP }}
