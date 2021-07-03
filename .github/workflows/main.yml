@@ -1,0 +1,24 @@
+name: 🚀 Deploy website on push
+on: 
+  push:
+    branches: [ master ]
+defaults:
+  run:
+    working-directory: 'src/**'
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: assape1410.epizy.com
+        username: epiz_29045278
+        port: 21
+        password: ${{ secrets.PROD_FTP }}
+        server-dir: /
+        local-dir: ./dist/
