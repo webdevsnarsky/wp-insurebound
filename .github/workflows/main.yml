@@ -2,9 +2,9 @@ name: 🚀 Deploy website on push
 on: 
   push:
     branches: [ main ]
-defaults:
-  run:
-    working-directory: '/**'
+# defaults:
+#   run:
+#     working-directory: '/**'
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -21,4 +21,4 @@ jobs:
         port: 21
         password: ${{ secrets.PROD_FTP }}
         server-dir: /assape1410.epizy.com/
-        local-dir: ./
+        # local-dir: ./
