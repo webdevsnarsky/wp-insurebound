@@ -2,9 +2,9 @@ name: 🚀 Deploy website on push
 on: 
   push:
     branches: [ main ]
-# defaults:
-#   run:
-#     working-directory: '/**'
+defaults:
+  run:
+    working-directory: '/wp-content/**'
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -20,5 +20,5 @@ jobs:
         username: epiz_29045278
         port: 21
         password: ${{ secrets.PROD_FTP }}
-        server-dir: /
-        # local-dir: ./
+        server-dir: /assape1410.epizy.com/
+        local-dir: ./wp-content/
