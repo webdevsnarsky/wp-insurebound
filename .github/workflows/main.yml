@@ -2,6 +2,9 @@ name: 🚀 Deploy website on push
 on: 
   push:
     branches: [ main ]
+defaults:
+  run:
+    working-directory: '/'
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -18,3 +21,4 @@ jobs:
         port: 21
         password: ${{ secrets.PROD_FTP }}
         server-dir: /
+        local-dir: ./
